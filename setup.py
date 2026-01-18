@@ -8,8 +8,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
 setup(
     name="number-guessing-game",
     version="1.0.0",
-    author="Your Name",
-    author_email="your.email@example.com",
+    author="Bhimesh",
+    author_email="bhimeshvermaji30@gmail.com",
     description="An interactive number guessing game",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -34,3 +34,4 @@ setup(
         ],
     },
 )
+
