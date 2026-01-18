@@ -59,4 +59,6 @@ Contributions are welcome! Feel free to submit a pull request.
 
 ## Author
 
-Your Name (your.email@example.com)
+Bhimesh Kumar Verma (bhimeshvermaji30@gmail.com)
+
+
