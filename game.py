@@ -2,20 +2,29 @@
 
 import random
 
+# Handle negative integers too
+def is_string_integer(s):
+    if s[0] in ('-', '+'):
+        return s[1:].isdigit()
+    return s.isdigit()
 
-def play_game():
+def play_game(low = 0, high = 100):
     """
     Start the number guessing game.
     
-    Players try to guess a random number between 1 and 100.
+    Players try to guess a random number between 'low' and 'high'.
     They can quit at any time by entering 'q'.
     """
     print(" Welcome to the Number Guessing Game! ")
     name = input("Please enter your name: ")
     
+    # Swap the values if low is bigger than high
+    if (low > high):
+        low, high = high, low
+
     while True:
-        print("I am thinking of a number between 1 and 100.")
-        secret_number = random.randint(1, 100)
+        print(f"I am thinking of a number between {low} and {high}.")
+        secret_number = random.randint(low, high)
         attempts = 0
 
         while True:
@@ -23,9 +32,10 @@ def play_game():
 
             if guess.lower() == 'q':
                 print("You quit the game. The number was", secret_number)
-                break
+                # If the player quits, then I don't think they'd like to play again
+                return
 
-            if not guess.isdigit():
+            if not is_string_integer(guess):
                 print("Please enter a valid number.")
                 continue
 
@@ -46,9 +56,9 @@ def play_game():
             break
 
 
-def main():
+def main(low = 0, high = 100):
     """Entry point for the game."""
-    play_game()
+    play_game(low, high)
 
 
 if __name__ == "__main__":
